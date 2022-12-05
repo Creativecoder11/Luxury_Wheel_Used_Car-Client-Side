@@ -1,0 +1,18 @@
+[
+    {   
+        "logo": "https://i.ibb.co/FHdXpGn/bmw-g0dbc81b8b-1280.png",
+        "category" : "BMW",
+        "category_id": "1"
+    },
+    {   
+        "logo": "https://i.ibb.co/cxGCrnt/clipart2867616.png",
+        "category" : "MERCEDES",
+        "category_id": "2" 
+    },
+    {   
+        "logo": "https://i.ibb.co/S3smxQ1/audi-logo-2.png",
+        "category" : "AUDI",
+        "category_id": "3"
+    }
+]
+  
