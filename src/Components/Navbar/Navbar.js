@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/logo-w.png";
-import spinner from "../../Assets/spinner.png";
 import { AuthContext } from "../../Contexts/AuthProvider";
-import { BiCaretLeftSquare } from "react-icons/bi";
 import toast from "react-hot-toast";
-
+import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -58,10 +56,10 @@ const Navbar = () => {
       <div className="navbar bg-black">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost  lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 w-5 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -82,7 +80,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <img src={logo} alt="" srcset="" />
+            <img src={logo} className='w-40 lg:w-full' alt="" srcset="" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -145,23 +143,9 @@ const Navbar = () => {
             }
           </Link>
         </div>
-          <label htmlFor="dashboard-drawer" tabIndex={2} className="navbar-end btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
+          <label htmlFor="dashboard-drawer" tabIndex={0} className="navbar-end btn btn-ghost lg:hidden">
+            <MdOutlineArrowDropDownCircle className="text-white text-2xl"/>
           </label>
-
       </div>
     </div>
   );

@@ -11,9 +11,9 @@ const Payment = () => {
   console.log(products);
   return (
     <div>
-      <div className="card w-80 mx-auto mt-20">
-        <h3 className="text">Payment for {products.item}</h3>
-        <p>Price {products.price}</p>
+      <div className="card border-4 border-black p-5 w-2/4 mx-auto mt-20">
+        <h3 className="text-2xl text-center">Payment for <span className="font-bold">{products.item}</span></h3>
+        <p className="text-center font-bold mt-2">Price {products.price}</p>
         <div className="card-body">
           <Elements stripe={stripePromise}>
             <CheckOutFrom 

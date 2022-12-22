@@ -37,16 +37,13 @@ const FeatureSection = () => {
               </div>
             </div>
             <div>
-              <img src={banner} alt="" srcset="" />
+              <img src={banner} className='w-3/5  lg:w-full mx-auto' alt="" srcset="" />
             </div>
           </div>
         </div>
         <div>
-          <p className="text-5xl text-center font-bold my-10">Ready To Sell Your Supercar?</p>
+          <p className="text-3xl lg:text-5xl text-center font-bold my-10">Ready To Sell Your Supercar?</p>
           <img src={blackCar} className='w-3/5 mx-auto' alt="" srcset="" />
-          <ButtonBlack className='px-10'>Contact Us</ButtonBlack>
-          <p className="font-semibold ">Call: +1-855-306-9292</p>
-          <p className="font-semibold ">Email: drs@dupontregistry.com</p>
         </div>
       </section>
     </div>

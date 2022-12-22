@@ -4,8 +4,8 @@ import { AuthContext } from "../../../Contexts/AuthProvider";
 import ButtonBlack from "../Button/ButtonBlack";
 
 const BookingModal = ({ bookingProduct, setBookingProduct }) => {
-  const { title, resalePrice, image } = bookingProduct;
-  console.log(title);
+  const { name, resalePrice, image } = bookingProduct;
+  console.log(bookingProduct);
   const { user } = useContext(AuthContext);
 
   const handleModal = (e) => {
@@ -103,7 +103,7 @@ const BookingModal = ({ bookingProduct, setBookingProduct }) => {
                     name="item"
                     type="text"
                     placeholder="Item Name"
-                    defaultValue={bookingProduct?.title}
+                    defaultValue={bookingProduct?.name}
                     disabled
                     className="input input-md w-full"
                   />

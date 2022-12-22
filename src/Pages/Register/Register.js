@@ -16,6 +16,8 @@ const Register = () => {
     const location = useLocation()
     const [createdUserEmail, setCreatedUserEmail] = useState('');
     const [token] = useToken(createdUserEmail)
+    const [passwordError, setPasswordError] = useState('');
+    const [error, setError] = useState('');
     const from = location?.state?.from?.pathname || '/'
    
     if(token){
@@ -33,7 +35,20 @@ const Register = () => {
       const password = form.password.value;
       console.log(name, email, image, password, role);
 
-      // REACT_APP_IMGBB_KEY
+      if(!/(?=.*[A-Z])/.test(password)){
+        setPasswordError('Please Provide at least One Uppercase')
+        return
+      }
+      if(!/(?=.*[0-9])/.test(password)){
+        setPasswordError('Please Provide at least One Number')
+        return
+      }
+      if(!/(?=.*[!@#$&*])/.test(password)){
+        setPasswordError('Please Provide at least One Speacial Carecter')
+        return
+      }
+      setPasswordError('')
+      setError('')
 
     const formData = new FormData();
     formData.append("image", image);
@@ -50,15 +65,14 @@ const Register = () => {
         .then((result) => {
           // setAuthToken(result.user);
           console.log(result);
-          toast.success("User Registration Successful!!")
           updateUserProfile(name, imageData.data.display_url)
           .then((res) => {
             saveUser(name, email, role)
-            
+            toast.success("User Registration Successful!!")
           });
         })      
         .catch(err => {
-          console.log(err)
+          setError(err.message)
           setLoading(false)
         })
         })
@@ -180,6 +194,8 @@ const Register = () => {
                   Sign up
                 </ButtonBlack>
               </div>
+              <p className="text-xs text-red-600">{error}</p>
+              <p className="text-xs text-red-600">{passwordError}</p>
             </div>
           </form>
           <div className="flex items-center pt-4 space-x-1">
